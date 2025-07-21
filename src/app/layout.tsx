@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+import SimpleLoading from "./_components/SimpleLoading";
 
 const flameBold = localFont({
   src: "../fonts/FlameBold.otf",
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${flameBold.variable} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <SimpleLoading>
+          <Header />
+          {children}
+          <Footer />
+        </SimpleLoading>
       </body>
     </html>
   );

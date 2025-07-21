@@ -14,6 +14,7 @@ const Hero = () => {
           fill
           className="object-contain"
           priority
+          loading="eager"
         />
       </div>
     </section>

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import { offers } from "@/constant/Data";
+import { getOffers } from "@/constant/Data";
 
-const MainOffers = () => {
+const MainOffers = async () => {
+  const offers = await getOffers();
   return (
     <section className="py-8 px-4">
       <div className="max-w-6xl mx-auto">

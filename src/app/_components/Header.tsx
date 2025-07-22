@@ -34,9 +34,9 @@ const Header = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/Menu", label: "Menu" },
-    { href: "/About", label: "About" },
-    { href: "/Contact", label: "Contact" },
+    { href: "/menu", label: "Menu" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (

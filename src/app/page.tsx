@@ -3,6 +3,7 @@ import Hero from "./_components/Hero";
 import MainOffers from "./_components/MainOffers";
 
 export default function Home() {
+  
   return (
     <>
       <Hero />

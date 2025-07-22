@@ -1,9 +1,21 @@
 import Image from "next/image";
 import React from "react";
-import { getOffers } from "@/constant/Data";
 
-const MainOffers = async () => {
-  const offers = await getOffers();
+interface Offer {
+  id: number;
+  title: string;
+  description: string;
+  price: string;
+  originalPrice: string;
+  discount: string;
+  image: string;
+}
+
+interface MainOffersProps {
+  offers: Offer[];
+}
+
+const MainOffers = ({ offers }: MainOffersProps) => {
   return (
     <section className="py-8 px-4">
       <div className="max-w-6xl mx-auto">

@@ -13,7 +13,13 @@ const nextConfig: NextConfig = {
         hostname: '**',
       },
     ],
+    formats: ['image/webp', 'image/avif'],
   },
+  experimental: {
+    optimizePackageImports: ['@radix-ui/react-icons', 'lucide-react'],
+  },
+  compress: true,
+  bundlePagesRouterDependencies: true,
 };
 
 export default nextConfig;

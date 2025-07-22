@@ -18,6 +18,7 @@ const BestSeller = async ({ category }: { category: string }) => {
                 price={item.price}
                 image={item.image}
                 description={item.description}
+                href={`/menu/${item.id}`}
               />
             </li>
           ))}

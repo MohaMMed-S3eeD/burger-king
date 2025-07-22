@@ -1,18 +1,23 @@
+"use client";
 import { ShoppingBag } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import { useRouter } from "next/navigation";
+  import React from "react";
 
 const Card = ({
   name,
   price,
   image,
   description,
-}: {
+  href,
+  }: {
   name: string;
   price: number;
   image: string;
   description: string;
+  href: string;
 }) => {
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-4 bg-black rounded-2xl p-4 items-center justify-center">
       <Image
@@ -33,7 +38,10 @@ const Card = ({
           <ShoppingBag />
         </button>
       </div>
-      <button className="bg-primary text-black px-4 py-2 rounded-2xl w-full cursor-pointer hover:bg-primary/80 transition-all duration-300">
+      <button
+        onClick={() => router.push(href)}
+        className="bg-primary text-black px-4 py-2 rounded-2xl w-full cursor-pointer hover:bg-primary/80 transition-all duration-300"
+      >
         Details
       </button>
     </div>

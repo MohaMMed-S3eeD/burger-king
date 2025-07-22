@@ -76,7 +76,7 @@ const MenuClient = ({
 
   return (
     <div className="flex flex-col sm:flex-row gap-6 max-w-7xl mx-auto p-6 " >
-      <aside className="w-64  p-6 rounded-lg h-fit sticky top-6 ">
+      <aside className="w-64  p-6 rounded-lg h-fit sm:sticky top-6 ">
         <h2 className="text-xl font-flame text-primary mb-6">Filters</h2>
 
         <div className="mb-6">

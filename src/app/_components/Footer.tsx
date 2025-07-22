@@ -84,7 +84,7 @@ const Footer = () => {
             </div>
             <div className="sm:flex flex-1 justify-end items-end relative h-32 sm:h-50 ">
               <Image
-                src="/Footer.png"
+                src="https://res.cloudinary.com/dtvr83fb3/image/upload/v1753207966/Footer_zz8y22.png"
                 alt="hero"
                 fill
                 className="object-contain"

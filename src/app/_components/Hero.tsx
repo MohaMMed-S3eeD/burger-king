@@ -9,7 +9,7 @@ const Hero = () => {
       </div>
       <div className="sm:flex flex-1  justify-center items-center relative h-40 sm:h-120  ">
         <Image
-          src="/BG.png"
+          src="https://res.cloudinary.com/dtvr83fb3/image/upload/v1753207970/BG_fox3rn.png"
           alt="hero"
           fill
           className="object-contain"

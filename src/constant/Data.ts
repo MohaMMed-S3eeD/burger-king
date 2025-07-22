@@ -20,7 +20,6 @@ export const getProducts = unstable_cache(
     }
 );
 
-// إضافة دالة للحصول على منتج واحد فقط
 export const getProductById = unstable_cache(
     async (id: number) => {
         const product = await prisma.product.findUnique({

@@ -28,7 +28,10 @@ interface MenuClientProps {
   initialCategories: Category[];
 }
 
-const MenuClient = ({ initialProducts, initialCategories }: MenuClientProps) => {
+const MenuClient = ({
+  initialProducts,
+  initialCategories,
+}: MenuClientProps) => {
   const [setting, setSetting] = useState<Setting>({
     category: [],
     price: "low-to-high",
@@ -72,8 +75,8 @@ const MenuClient = ({ initialProducts, initialCategories }: MenuClientProps) => 
   };
 
   return (
-    <div className="flex gap-6 max-w-7xl mx-auto p-6">
-      <aside className="w-64  p-6 rounded-lg h-fit sticky top-6">
+    <div className="flex flex-col sm:flex-row gap-6 max-w-7xl mx-auto p-6 " >
+      <aside className="w-64  p-6 rounded-lg h-fit sticky top-6 ">
         <h2 className="text-xl font-flame text-primary mb-6">Filters</h2>
 
         <div className="mb-6">
@@ -165,4 +168,4 @@ const MenuClient = ({ initialProducts, initialCategories }: MenuClientProps) => 
   );
 };
 
-export default MenuClient; 
+export default MenuClient;

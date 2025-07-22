@@ -3,10 +3,11 @@ import { getProducts } from "@/constant/Data";
 import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 
-const page = async ({ params }: { params: { productID: string } }) => {
+const page = async ({ params }: { params: Promise<{ productID: string }> }) => {
+  const resolvedParams = await params;
   const products = await getProducts();
   const product = products.find(
-    (item) => item.id === parseInt(params.productID)
+    (item) => item.id === parseInt(resolvedParams.productID)
   );
 
   if (!product) {

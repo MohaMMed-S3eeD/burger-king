@@ -12,6 +12,23 @@ export const getProducts = async () => {
     }));
 };
 
+// إضافة دالة للحصول على منتج واحد فقط
+export const getProductById = async (id: number) => {
+    const product = await prisma.product.findUnique({
+        where: { id },
+        include: {
+            category: true
+        }
+    });
+    
+    if (!product) return null;
+    
+    return {
+        ...product,
+        category: product.category.name
+    };
+};
+
 export const getCategories = async () => {
     return await prisma.category.findMany();
 };

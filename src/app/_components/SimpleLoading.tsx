@@ -7,7 +7,7 @@ const SimpleLoading = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 0); // 3 ثوانِ
+    }, 2000); // 3 ثوانِ
 
     return () => clearTimeout(timer);
   }, []);

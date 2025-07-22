@@ -1,14 +1,11 @@
 import React from "react";
-import { getProducts } from "@/constant/Data";
+import { getProductById } from "@/constant/Data";
 import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 
 const page = async ({ params }: { params: Promise<{ productID: string }> }) => {
   const resolvedParams = await params;
-  const products = await getProducts();
-  const product = products.find(
-    (item) => item.id === parseInt(resolvedParams.productID)
-  );
+  const product = await getProductById(parseInt(resolvedParams.productID));
 
   if (!product) {
     return (
@@ -32,6 +29,10 @@ const page = async ({ params }: { params: Promise<{ productID: string }> }) => {
                 width={400}
                 height={400}
                 className="rounded-2xl w-full h-auto"
+                priority
+                placeholder="blur" 
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>
